@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-/*dfsdfsd*/
+
 
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
+	/*dsfds*/
 	
 	@Autowired
 	private UserService userService;
