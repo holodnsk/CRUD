@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -13,6 +14,8 @@
 ${message}<br/>
 <a href="${pageContext.request.contextPath}/user/add.html">Add new user</a><br/>
 <a href="${pageContext.request.contextPath}/user/list.html">User list</a><br/>
+<a href="${pageContext.request.contextPath}/user/search.html">Search Users</a><br/>
+
 </p>
 </body>
 </html>

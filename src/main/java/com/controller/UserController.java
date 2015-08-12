@@ -16,8 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
-	/*dsfds*/
-	
+
 	@Autowired
 	private UserService userService;
 	
@@ -47,6 +46,16 @@ public class UserController {
 		List<User> users = userService.getUsers();
 		modelAndView.addObject("users", users);
 		
+		return modelAndView;
+	}
+
+	@RequestMapping(value="/search")
+	public ModelAndView searchOfUsers() {
+		ModelAndView modelAndView = new ModelAndView("list-of-users");
+
+		List<User> users = userService.getUsers("ivan");
+		modelAndView.addObject("users", users);
+
 		return modelAndView;
 	}
 	

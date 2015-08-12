@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -46,6 +47,13 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("unchecked")
 	public List<User> getUsers() {
 		return getCurrentSession().createQuery("from User").list();
+	}
+
+	@Override
+	@RequestMapping(value="/list")
+	public List<User> getUsers(String filter) {
+
+		return getCurrentSession().createQuery("from User where name=\'" + filter + "'").list();
 	}
 
 }
