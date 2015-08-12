@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.Comparator;
 import java.util.List;
 
 import com.model.User;
@@ -23,6 +24,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public void updateUser(User user) {
+
 		User userToUpdate = getUser(user.getId());
 		userToUpdate.setName(user.getName());
 		userToUpdate.setAge(user.getAge());
@@ -47,3 +49,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 }
+
+
+
+
+
+

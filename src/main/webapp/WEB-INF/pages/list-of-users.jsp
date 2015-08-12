@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 
@@ -32,8 +33,8 @@
 	//-->
 	<td>${user.name}</td>
 	<td>${user.age}</td>
-	<td>${user.isAdmin}</td>
-	<td>${user.createdDate}</td>
+	<td>${user.isAdmin? "admin" : "user"}</td>
+	<td><fmt:formatDate pattern="dd-MM-yyyy" value="${user.createdDate}"/></td>
 	<td>
 	<a href="${pageContext.request.contextPath}/user/edit/${user.id}.html">Edit</a><br/>
 	<a href="${pageContext.request.contextPath}/user/delete/${user.id}.html">Delete</a><br/>
