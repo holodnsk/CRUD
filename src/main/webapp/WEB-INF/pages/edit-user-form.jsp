@@ -29,6 +29,10 @@
 		<td><form:input path="age" /></td>
 	</tr>
 	<tr>
+		<td>Is Admin:</td>
+		<td><form:checkbox path="isAdmin" /></td>
+	</tr>
+	<tr>
 		<td><input type="submit" value="Edit" /></td>
 		<td></td>
 	</tr>

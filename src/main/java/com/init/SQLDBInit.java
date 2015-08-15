@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SQLDBInit {
+    private static boolean isInit = false;
     private final static String dropDB = "DROP DATABASE IF EXISTS test;";
     private final static String createDB = "CREATE DATABASE test DEFAULT CHARACTER SET 'utf8';";
     private final static String useDB = "USE test;";
@@ -41,6 +42,8 @@ public class SQLDBInit {
             headerAddUsersToDB +"('Mattias', '15', false, '1990-03-20');" };
 
     public SQLDBInit() {
+        if (isInit) return;
+        isInit = true;
         Connection connection = null;
         Statement statement = null;
         try {

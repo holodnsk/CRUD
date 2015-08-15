@@ -29,6 +29,7 @@ public class UserDAOImpl implements UserDAO {
 		User userToUpdate = getUser(user.getId());
 		userToUpdate.setName(user.getName());
 		userToUpdate.setAge(user.getAge());
+		userToUpdate.setIsAdmin(user.getIsAdmin());
 		getCurrentSession().update(userToUpdate);
 		
 	}
@@ -53,7 +54,8 @@ public class UserDAOImpl implements UserDAO {
 	@RequestMapping(value="/list")
 	public List<User> getUsers(String filter) {
 
-		return getCurrentSession().createQuery("from User where name=\'" + filter + "'").list();
+
+		return getCurrentSession().createQuery("from User where name like \'%" + filter + "%'").list();
 	}
 
 }

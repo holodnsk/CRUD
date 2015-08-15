@@ -52,6 +52,8 @@
 	</c:forEach>
 	</tbody>
 </table>
+<a href="prevPage">Prev. page</a>
+<a href="nextPage">Next page</a>
 
 <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
 
