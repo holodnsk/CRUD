@@ -11,10 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Edit user page</title>
 </head>
-<body>
+<>
 <h1>Edit user page</h1>
 <p>Here you can edit the existing user.</p>
 <p>${message}</p>
+
+<!-- TODO move this form to list-of-users form-->
 <form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/edit/${user.id}.html">
 <table>
 <tbody>

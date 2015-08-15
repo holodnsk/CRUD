@@ -26,39 +26,45 @@ public class UserController {
 		modelAndView.addObject("user", new User());
 		return modelAndView;
 	}
-	
+
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public ModelAndView addingUser(@ModelAttribute User user) {
-		
+
 		ModelAndView modelAndView = new ModelAndView("home");
 		userService.addUser(user);
-		
+
 		String message = "User was successfully added.";
 		modelAndView.addObject("message", message);
-		
+
 		return modelAndView;
 	}
-	
-	@RequestMapping(value="/list")
-	public ModelAndView listOfUsers() {
+
+
+
+	@RequestMapping(value="/search", method = RequestMethod.POST)
+	public ModelAndView listSearchedUsers(@ModelAttribute User user, String name) {
+
+
 		ModelAndView modelAndView = new ModelAndView("list-of-users");
-		
+
+		// TODO check if argument @name not have simbols - return not filtered list
+		List<User> users = userService.getUsers(name);
+
+		modelAndView.addObject("users", users);
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value="/list")
+	public ModelAndView listOfUsers(@ModelAttribute User user) {
+		ModelAndView modelAndView = new ModelAndView("list-of-users");
+
 		List<User> users = userService.getUsers();
 		modelAndView.addObject("users", users);
-		
-		return modelAndView;
-	}
-
-	@RequestMapping(value="/search")
-	public ModelAndView searchOfUsers() {
-		ModelAndView modelAndView = new ModelAndView("list-of-users");
-
-		List<User> users = userService.getUsers("ivan");
-		modelAndView.addObject("users", users);
 
 		return modelAndView;
 	}
-	
+
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public ModelAndView editUserPage(@PathVariable Integer id) {
 		ModelAndView modelAndView = new ModelAndView("edit-user-form");

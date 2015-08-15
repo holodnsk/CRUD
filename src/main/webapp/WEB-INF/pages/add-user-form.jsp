@@ -14,6 +14,9 @@
 <body>
 <h1>Add user page</h1>
 <p>Here you can add a new user.</p>
+
+<!-- TODO move this form to list-of-users form-->
+
 <form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/add.html">
 <table>
 <tbody>

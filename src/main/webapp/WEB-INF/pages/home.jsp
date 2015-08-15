@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<!-- TODO make homepage to one-page service-->
+
 <p>
 ${message}<br/>
 <a href="${pageContext.request.contextPath}/user/add.html">Add new user</a><br/>
