@@ -6,15 +6,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Home page</title>
+
 </head>
 <body>
-<h1>Home page</h1>
+
 <p>
 ${message}<br/>
 <a href="${pageContext.request.contextPath}/user/add.html">Add new user</a><br/>
 <a href="${pageContext.request.contextPath}/user/list.html">User list</a><br/>
-<a href="${pageContext.request.contextPath}/user/search.html">Search Users</a><br/>
+
 
 </p>
 </body>
